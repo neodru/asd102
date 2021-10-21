@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+<h1> ASD102: Object-oriented Programming with C++</h1>
+<h2>California Institute of Arts and Technology (CIAT)</h2>
+<h3>Course Description: </h3>
+<p>This course introduces students to intermediate concepts in programming and computer science topics. The focus of the course will be primarily C++ using Visual Studio 2015 or higher. Students build on previously solidified knowledge and gain leverage for better understanding of advanced computer science studies. C++ language concepts like classes, objects, constructors, inheritance, polymorphism, and the C++ standard library will be presented. Additional topics introduced include versioning, source control, data structures, and memory management. Upon completion of the course students will be able to understand how to create, modify, and maintain C++ programs to provide in-depth software-based solutions.</p>
 
-You can use the [editor on GitHub](https://github.com/neodru/asd102/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<h3>Repository Info</h3>
+<ol>
+  <li>This respository contains the .CPP assignment files for ASD102. </li>
+  <li>They are separated into weekly folders and each file contains adequate information within the comments to follow along using the course text (see below). </li>
+  <li>Visual Studio Code with C++ and Code Runner (compiler) Extension and GitHub Desktop for MacOs was used to create and upload the files to this repository. 
+ </li>
+  <li>If you have any questions or would like to add to what I have please feel free to do so. </li>
+</ol>   
+<h3>Course Text</h3>
+Malik, D.S. (2017). C++ Programming: Program Design Including Data Structures, Eighth Edition. Boston, MA. Cengage Learning
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/neodru/asd102/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<h3>Connect with me:</h3>
+<p><a href="https://www.linkedin.com/in/drumacasieb/">LinkedIn Profile</a></p>
+<p><a href="https://portfolium.com/DruMacasieb">Portfolio</a></p>
