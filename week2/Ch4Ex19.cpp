@@ -14,12 +14,29 @@ bonus is 0, that is 0%. (3)
 using namespace std;
 int main()
 {
-    double bounus, sales;
-    if (sale > 20000)
-    bonus = 0.10;
-    else if (sale > 10000 && sale <= 20000)
-    bonus = 0.05;
+    double bonus, sales;
+
+    cout << "Enter sales: " << endl;
+    cin >> sales;
+    
+    if (sales > 20000)
+    {
+        bonus = 0.10;
+        cout << "Your bonus is " << (sales / bonus) << endl;
+
+    }
+    
+    else if (sales > 10000 && sales <= 20000)
+    {
+        bonus = 0.05;
+        cout << "Your bonus is " << (sales / bonus) << endl;
+    }
     else
-    bonus = 0.0;
+    {
+         bonus = 0.0;
+        cout << "Your bonus is " << (sales / bonus) << endl;
+    }
+       
 
 }
+      
