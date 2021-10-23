@@ -78,7 +78,6 @@ int main()
     }
     else
         cout << "The program does not handle " << shape << endl; 
-   
     
 return 0;
 

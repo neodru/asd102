@@ -26,8 +26,10 @@ int main()
                       // digit = 2
       num = num / 10;     // num = 742 /10
                     // num = 74
-    cout << "Here is one of your digits: " << num %  10 << endl;              
+    
    }
+
+     cout << "\nThe sum of the digits is "<< digit;
    // digit = 2 + 74 % 10;  
    // digit = 2 + 4
    // digit = 6
@@ -50,5 +52,4 @@ int main()
 
 
 
-   cout << "\nThe sum of the digits is "<< digit;
 }
