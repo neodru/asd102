@@ -12,21 +12,30 @@ telephone number meaningful, companies might use more than seven letters.
   as well as spaces between words. Moreover, your program should process as many 
   telephone numbers as the user wants.
 */
+// below this comment are the preprocessor directives
+#include <iostream>  //Used as a stream of Input and Output.
+#include <string> //Perform string manipulation operations like strlen and strcpy.
+// above this comment are the preprocessor directives
 
-#include std
-// #include <iostream>
-// #include <string>
-
-// using namespace std;
+using namespace std; //“using namespace std” means we use the namespace named std. “std” is an abbreviation for standard. So that means we use all the things with in “std” namespace. If we don’t want to use this line of code, we can use the things in this namespace like this. std::cout, std::endl.
  
-int main()
+//“Every C++ program must have a function called main to tell it where to start executing. A function is basically a named sequence of instructions for the computer to execute in the order in which they are written. A function has four parts:”
+
+
+int main() //Part 1 int “A return type, here int (meaning “integer”), which specifies what kind of result, if any, the function will return to whoever asked for it to be executed.”
+//part 2 “A name, here main.”
+//part 3 parameters, here it is blank  ()
+//part 4 a function body that is in between curly braces { } 
+
 {
-	char letter;
+	//below this comment we define our variables
+    char letter;
     int noOfLetters;
     char response;
+    //above this comment we define our variables
 
-    cout << "Enter Y/y to convert a telephone number " 
-         << "form letters to digits.\n"
+    cout << "Enter Y/y to convert a telephone number " // prenounced "see out" standsfor character output. << symbol is an output operator
+         << "form letters to digits.\n" //
          << "Enter any other letter to terminate the program." << endl;
 
     cin >> response;

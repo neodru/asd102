@@ -12,6 +12,7 @@ Write a program that prompts the user to input an integer
  #include<iostream>
 
 using namespace std;
+
 int main() 
 {
    int num, digit = 0;
@@ -19,17 +20,18 @@ int main()
    cout << "Enter the number : ";
    cin >> num; // i.e. 742
    
-   while (num != 0) 
-   {
-      digit = digit + num % 10; // digit = 0 + 742 % 10
+
+  while (num != 0) 
+  {
+      //digit = digit + num % 10; // digit = 0 + 742 % 10
                       // digit =    0  +    2
                       // digit = 2
-      num = num / 10;     // num = 742 /10
+     // num = num / 10;     // num = 742 /10
                     // num = 74
     
-   }
+   //}
 
-     cout << "\nThe sum of the digits is "<< digit;
+  cout << "\nThe sum of the digits is "<< digit;
    // digit = 2 + 74 % 10;  
    // digit = 2 + 4
    // digit = 6
@@ -52,4 +54,3 @@ int main()
 
 
 
-}
