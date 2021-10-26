@@ -1,6 +1,6 @@
 <h1>Welcome to ASD102: Object-oriented Programming with C++</h1>
 
-This repository is based on the California Institute of Arts and Technology (CIAT) course of the same name. More information can be found on the [README.md file](asd102/README.md).
+This repository is based on the California Institute of Arts and Technology (CIAT) course of the same name. More information can be found on the [README.md file](/gh-paages/asd102/README.md).
 <h3>Course Description: </h3>
 <p>This course introduces students to intermediate concepts in programming and computer science topics. The focus of the course will be primarily C++ using Visual Studio 2015 or higher. Students build on previously solidified knowledge and gain leverage for better understanding of advanced computer science studies. C++ language concepts like classes, objects, constructors, inheritance, polymorphism, and the C++ standard library will be presented. Additional topics introduced include versioning, source control, data structures, and memory management. Upon completion of the course students will be able to understand how to create, modify, and maintain C++ programs to provide in-depth software-based solutions.</p>
 
