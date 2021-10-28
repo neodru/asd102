@@ -15,7 +15,7 @@ int main()
     
     cout << "CIAT Vowel Counter.\nType a word or setence:\n "; //ask the question
     
-    cin.get(letter);
+    cin.get(letter);//
     while (letter != '\n') // we use the \n because it will read, while the next character in letter does not equal a new line count, else stop. If we use another variable in place of \n it will never get to the else
 	{
 		if (isVowel(letter))
@@ -27,6 +27,7 @@ int main()
     //compile
     cout << "\nThe number of vowels is " << vowelCount <<endl;
     return 0;// does not return a bool because we do not call the function.
+
     
 }
 
@@ -50,3 +51,6 @@ int main()
     }
 }
 
+/*
+
+*/
