@@ -16,10 +16,53 @@ using namespace std;
 bool isVowel(char ch); 
 string rotate(string pStr);
 string pigLatinString(string pStr);
-
+void getNextWord(ifstream& inF, char& ch, string& word);
 int main() 
 {
     string str;
+    
+    char ch;// reference Oct 28 class recording 
+
+    ifstream infile;
+    ofstream outfile;
+
+    infile.open("Ch7_Ex3Data.txt");
+    if (!infile)
+    {
+        cout << "Cannot open input file. Program terminates." << endl;
+        return 1;
+    }
+
+    outfile.open("Ch7_Ex3Out.txt");
+
+    infile.get(ch);
+
+    while (infile)
+    {
+        while (ch != '\n')
+        {
+            if (ch == ' ')
+            {
+                outfile << ch;
+                infile.get(ch);
+            }
+            else
+            {
+                getNextWord(infile, ch, str);
+                outfile << pigLatinString(str);
+            }
+        }
+
+        outfile << endl;
+        infile.get(ch);
+    }
+
+    infile.close();
+    outfile.close();
+
+    return 0;
+}
+
     
     cout << "Enter a string: ";
     cin >> str;
