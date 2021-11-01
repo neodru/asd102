@@ -7,7 +7,7 @@
 */
 
 #include <iostream> 
-#include <string>
+#include <string> //This header introduces string types, character traits and a set of converting functions.
 #include <fstream>
 
 using namespace std;
@@ -17,17 +17,55 @@ bool isVowel(char ch);
 string rotate(string pStr);
 string pigLatinString(string pStr);
 
-int main() 
+void getNextWord(ifstream& inF, char& ch, string& word);
+
+int main()
 {
     string str;
-    
-    cout << "Enter a string: ";
-    cin >> str;
-    cout << endl;
-    cout << "The pig Latin form of " << str << " is: "
-         << pigLatinString(str) << endl;
-    return 0; 
+
+    char ch;
+
+    ifstream infile;
+    ofstream outfile;
+
+    infile.open("Ch7_Ex3Data.txt");
+    if (!infile)
+    {
+        cout << "Cannot open input file. Program terminates." << endl;
+        return 1;
+    }
+
+    outfile.open("Ch7_Ex3Out.txt");
+
+    infile.get(ch);
+
+    while (infile)
+    {
+        while (ch != '\n')
+        {
+            if (ch == ' ')
+            {
+                outfile << ch;
+                infile.get(ch);
+            }
+            else
+            {
+                getNextWord(infile, ch, str);
+                outfile << pigLatinString(str);
+            }
+        }
+
+        outfile << endl;
+        infile.get(ch);
+    }
+
+    infile.close();
+    outfile.close();
+
+    return 0;
 }
+   
+
 //Place the definitions of the functions isVowel, rotate, and
 //pigLatinString and as described previously here.
 
@@ -51,6 +89,20 @@ bool isVowel(char ch)// page 506
         default:
             return false;
     }
+}
+bool isPunctuation(char ch)
+{
+    switch (ch)
+    {
+    case ',': 
+    case '.': 
+    case '?': 
+    case ';': 
+    case ':': 
+        return true;
+    default: 
+        return false;
+	}
 }
 //Ref page 507 This function takes a string as a parameter, removes the first character of the string, and places it at the end of the string. This is done by extracting the substring, start- ing at position 1 (which is the second character) until the end of the string, and then adding the first character of the string. The new string is returned as the value of this function. Essentially, the definition of the function rotate is:
 string rotate(string pStr)
@@ -79,18 +131,29 @@ string pigLatinString(string pStr)
     string::size_type len;
     
     bool foundVowel;
-    
+     bool isPunct = isPunctuation(pStr[len - 1]);
+    char puncMark;
+
     string::size_type counter;
     
+     if (isPunct)
+    {
+        puncMark = pStr[len - 1];/// If a word ends with a punctuation mark, in the pig Latin form, 
+        len = len - 1; //put the punctuation at the end of the string. For example, the pig Latin form of Hello! is ello-Hay!. Assume that the text con- tains the following punctuation marks: , (comma), . (period), ? (question mark), ; (semicolon), and : (colon).
+    }
+
     if (isVowel(pStr[0]))
         pStr = pStr + "-way";// If pStr[0] is a vowel, add "-way" at the end of pStr.
     else
             {
-                pStr = pStr + '-';// Suppose pStr[0] is not a vowel.
-                pStr = rotate(pStr); //Move the first character of pStr to the end of pStr.
+                pStr = pStr + '-';
+                pStr = rotate(pStr); 
+                
                 len = pStr.length();
-                foundVowel = false;
-                for (counter = 1; counter < len - 1; counter++)//The second character of pStr becomes the first character of pStr.
+                foundVowel = false; // Suppose pStr[0] is not a vowel.
+                
+                for (counter = 1; counter < len - 1; 
+                                    counter++)//The second character of pStr becomes the first character of pStr.
                     if (isVowel(pStr[0]))// Now pStr may or may not contain a vowel. 
                     {
                         foundVowel = true;//We use a bool variable, foundVowel, which is set to true if pStr contains a vowel and false otherwise.
@@ -100,9 +163,24 @@ string pigLatinString(string pStr)
                         pStr = rotate(pStr);
         
                 if (!foundVowel)
-                    pStr = pStr.substr(1, len) + "-way";
+                    pStr = pStr.substr(1, len) + "-way"; //Move the first character of pStr to the end of pStr.
                 else
                     pStr = pStr + "ay";
             }
+             if (isPunct)
+        pStr = pStr + puncMark;
+
     return pStr;
+}
+void getNextWord(ifstream& inF, char& ch, string& word)// void means “no type”! its value is to enforce a rule preventing use where a value would be expected. 
+{
+    word = ch;
+
+    while (ch != ' ' && ch != '\n')
+    {
+        inF.get(ch);
+
+        if (ch != ' ' && ch != '\n')
+            word = word + ch;
+    }
 }
