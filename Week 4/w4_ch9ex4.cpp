@@ -52,8 +52,8 @@ const int NO_OF_ITEMS = 8;
 
 struct menuItemType
 {
-    string menuItem;
-    double menuPrice;
+    string item;
+    double price;
 };
 
 void getData(ifstream& inFile, menuItemType mList[], int listSize);
@@ -98,20 +98,20 @@ void getData(ifstream& inFile, menuItemType mList[], int listSize)
     char ch;
 	for (int i = 0; i < listSize; i++)
     {
-        getline(inFile, mList[i].menuItem);
-        inFile >> mList[i].menuPrice;
+        getline(inFile, mList[i].item);
+        inFile >> mList[i].price;
         inFile.get(ch);
     }
 }
 
-void showMenu(menuItemType mList[], int listSize)
+void showMenu(menuItemType mList[], int listSize) // Show the customer the different breakfast items offered by the restaurant.
 {
-    cout << "Welcome to Johnny's Resturant" << endl;
+    cout << "Welcome to CIAT Caffeteria" << endl;
     cout << "----Today's Menu----" << endl;
 
     for (int i = 0; i < listSize; i++)
-        cout << i+1 << ": " << left << setw(15) << mList[i].menuItem
-             << right << " $" << mList[i].menuPrice << endl;
+        cout << i+1 << ": " << left << setw(15) << mList[i].item
+             << right << " $" << mList[i].price << endl;
     cout << endl;
 }
 
@@ -122,12 +122,12 @@ void printCheck(menuItemType mList[], int listSize,
     double salesTax;
     double amountDue = 0;
 
-    cout << "Welcome to Johnny's Resturant" << endl;
+    cout << "Welcome to CIAT Caffeteria" << endl;//y
     for (i = 0; i < cListLength; i++)
     {
-        cout << left << setw(15) << mList[cList[i]].menuItem
-             << right << " $" << setw(4) << mList[cList[i]].menuPrice << endl;
-    amountDue += mList[cList[i]].menuPrice;
+        cout << left << setw(15) << mList[cList[i]].item
+             << right << " $" << setw(4) << mList[cList[i]].price << endl;
+    amountDue += mList[cList[i]].price;
     }
 
     salesTax = amountDue * .05;
@@ -166,7 +166,7 @@ void makeSelection(int listSize,
         else
             cout << "Item already selected" << endl;
 
-        cout << "Select another item Y/y (Yes), N/n (No): ";
+        cout << "Select another item Y/y (Yes), N/n (No): "; //Allow the customer to select more than one item from the menu. 
         cin >> response;
         cout << endl;
     }

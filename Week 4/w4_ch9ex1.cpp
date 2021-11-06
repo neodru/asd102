@@ -52,9 +52,6 @@ int main()
     cin >> comp.price;
     cout << endl;
 
-    
-
-
     cout << "Manufacturer: " << comp.manufacturer << endl;
     cout << "Model: " << comp.model << endl;
     cout << "Processor: " << comp.processor<< endl;
